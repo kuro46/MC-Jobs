@@ -1,0 +1,28 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'java'
+}
+
+group = 'com.dmgkz.mcjobs'
+version = '3.1.9'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compileOnly 'org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT'
+    compileOnly files('libs/Vault-1.6.6.jar')
+    compileOnly files('libs/worldguard-bukkit-6.2.2.jar')
+    compileOnly files('libs/LogBlock-v1.10.jar')
+    compileOnly files('libs/mcMMO-v2.0.0.jar')
+    compileOnly files('libs/TownyAdvanced-v0.82.0.0-Register.jar')
+    compileOnly files('libs/TownyAdvanced-v0.95.2.10-Towny.jar')
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
