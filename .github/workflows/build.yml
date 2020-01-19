@@ -1,4 +1,4 @@
-name: Java CI
+name: Build
 
 on: [push]
 
@@ -13,7 +13,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Move to workspace
-      run: cd mcJobs
     - name: Build with Gradle
-      run: ./gradlew build
+      run: cd mcJobs && ./gradlew build
