@@ -51,9 +51,11 @@ public class BlockPlace implements Listener {
 				return;
 		}
 
-		if(MCListeners.isTowny()){
+		if(MCListeners.isTowny())
+			if (block != null && play != null) {{
 			if(!PlayerCacheUtil.getCachePermission(play, loc, block, TownyPermission.ActionType.BUILD))
 				return;
+			}
 		}
 
 		if(MCListeners.isMultiWorld()){

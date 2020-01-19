@@ -168,7 +168,7 @@ public class McJobs extends JavaPlugin {
 			getServer().getScheduler().scheduleSyncRepeatingTask(this, new McJobsPreComp(), 200L, 200L);
 
 			if(isPrune())
-				getServer().getScheduler().scheduleAsyncRepeatingTask(this, new McJobsFilePrune(), 1200L, 1200L);
+				getServer().getScheduler().scheduleSyncRepeatingTask(this, new McJobsFilePrune(), 1200L, 1200L);
 
 			log.info("MC Jobs has been enabled!");
 		}

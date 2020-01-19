@@ -89,7 +89,7 @@ public class AdminCommand implements CommandExecutor{
 			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(mcPlugin, new McJobsPreComp(), 200L, 200L);
 
 			if(mcPlugin.isPrune())
-				Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(mcPlugin, new McJobsFilePrune(), 1200L, 1200L);
+				Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(mcPlugin, new McJobsFilePrune(), 1200L, 1200L);
 
 			if(sender instanceof Player){
 				str = ChatColor.GRAY + modText.getAdminCommand("succeedreload").addVariables("", sender.getName(), label);
@@ -471,7 +471,7 @@ public class AdminCommand implements CommandExecutor{
 		List<Player> aOnline              = new ArrayList<Player>();
 		ArrayList<String> players         = new ArrayList<String>();
 
-		aOnline = (List<Player>) Bukkit.getOnlinePlayers();
+		 aOnline = (List<Player>) Bukkit.getOnlinePlayers();
 
 		if(PlayerCache.playerExists(args))
 			players.add(args);

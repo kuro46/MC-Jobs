@@ -28,13 +28,13 @@ public class Baking implements Listener {
 	private HashMap<InventoryHolder, Player> hFurnaces = new HashMap<InventoryHolder, Player>();
 	@SuppressWarnings("unused")
 	private Logger log = Bukkit.getServer().getLogger();
-	
+
 	@EventHandler(priority = EventPriority.LOW)
 	public void getFurnaceCook(InventoryClickEvent event){
 		 SlotType entFurn = event.getSlotType();
 		 Integer slotID = event.getSlot();
 		 InventoryHolder furnace;
-		 
+
 		 if(entFurn == SlotType.CONTAINER && slotID == 0 && event.getInventory().getName().equalsIgnoreCase("container.furnace")){
 			 Player play = (Player) event.getWhoClicked();
 			 ItemStack itemPlaced = event.getCursor();
@@ -42,7 +42,7 @@ public class Baking implements Listener {
 			 furnace = event.getInventory().getHolder();
 
 			 if(itemPlaced.getType() != Material.AIR){
-				 this.hFurnaces.put(furnace, play);				 
+				 this.hFurnaces.put(furnace, play);
 			 }
 		 }
 	}
@@ -51,14 +51,14 @@ public class Baking implements Listener {
 	public void furnaceBurn(FurnaceSmeltEvent event){
 		Block bfurnace = event.getBlock();
 		Furnace furnace = (Furnace) bfurnace.getState();
-		
+
 		InventoryHolder key = furnace.getInventory().getHolder();
-		
+
 		if(this.hFurnaces.containsKey(key)){
 			Iterator<Map.Entry<String, PlayerJobs>> it = PlayerJobs.getJobsList().entrySet().iterator();
 			String sJob = null;
 			Player play = this.hFurnaces.get(key);
-			
+
 			if(!play.isOnline())
 				return;
 
@@ -68,7 +68,7 @@ public class Baking implements Listener {
 			}
 
 			Material food = event.getResult().getType();
-			
+
 			while(it.hasNext()){
 
 				Map.Entry<String, PlayerJobs> pair = it.next();
@@ -79,11 +79,11 @@ public class Baking implements Listener {
 					CompCache comp = new CompCache(sJob, play.getLocation(), play, food, "craft");
 					CompData.getCompCache().add(comp);
 
-//					if(PlayerJobs.joblist.get(sJob).getData().compJob().compCraft(food, play, "craft")){		
+//					if(PlayerJobs.joblist.get(sJob).getData().compJob().compCraft(food, play, "craft")){
 //						play.sendMessage("You cooked " + ChatColor.DARK_GREEN + amount.toString() + " " + food.toString() + ChatColor.WHITE + ".");
-//					}					
+//					}
 				}
 			}
-		}	
+		}
 	}
 }

@@ -228,7 +228,6 @@ public class Metrics {
             if (taskId >= 0) {
                 return true;
             }
-
             // Begin hitting the server with glorious data
             taskId = plugin.getServer().getScheduler().scheduleAsyncRepeatingTask(plugin, new Runnable() {
 
