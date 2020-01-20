@@ -1,0 +1,692 @@
+jobscommand:
+    playeronly: "そのコマンドはプレイヤーのみ実行可能です"
+    permission: "&6%p&c 権限がありません"
+    args: "&6%p&c 引数が多すぎます"
+    exist: "&6%j&c は存在しません"
+    rejoin: "&7&6%j&7 に再びなることができます."
+    show: "&7Now &ashowing&7 pay messages for the &6%j&7 job."
+    hide: "&7Now &chiding&7 pay messages for the &6%j&7 job."
+
+jobsnotify:
+    and: と
+    hours: 時間
+    hour: 時間
+    minutes: 分
+    minute: 分
+    days: 日
+    day: 日
+    weeks: 週間
+    week: 週間
+    months: 月
+    month: 月
+    message: "&aYour &6MC Jobs&a have earned you &6%j&a in the past &c%g&a."
+    overpay: "&e%p&a, you are exhausted and cannot earn more from &6MC Jobs&a for awhile."
+
+jobsdisplay:
+    employed: "--   &cEmployed"
+    unemployed: "-- &9Unemployed"
+    default: "--    &3Default"
+    basepay: Base Pay
+    charge: CHARGE
+    pay: PAY
+    level: レベル
+    rank: ランク
+    exp: 経験値
+    break: 破壊
+    place: 設置
+    defeat: DEFEAT
+    fishing: 釣り
+    craft: 作成
+    repair: 修復
+    enchant: エンチャント
+    potions: ポーション
+    tier: TIER
+
+jobsjoin:
+    have: "あなたは既に&6%j&cです!"
+    join: "%pは&9%j&7になりました."
+    toomany: "&6%p&c これ以上Jobを増やすことはできません.  新しいJobになるには:"
+    command: "/jobs leave [job]で今あるJobのどれかを抜けてください"
+    jobperm: "&6%p&7, &9%j&7になるための権限がありません"
+    timer: "&7You cannot join &6%j&7 for another &c%g&7."
+ 
+jobsleave:
+    quit: "&6%j&7を抜けました."
+    donthave: "&6%j&cに参加していません"
+    leavedefault: "&6%j&cデフォルトのJobからは抜けることができません."
+
+jobslist:
+    available: "&e%p&2, 有効なJobリスト:"
+    jobsin: "&c赤色は&2 あなたが参加しているJobです."
+    nojob: "&8グレーは&2 無効なJobです."
+    defaultjob: "&3青色は&2 デフォルトのJobです"
+    specific: "Jobについて詳しく見るには: &e/jobs [job name]&fとうってください"    
+    jobs: "JOBS:"
+
+jobshelp:
+    page: ページ
+    1:
+        line1: "&7   ようこそ&3MC Jobs&7へ."
+        line2: "&7ここではJob(ジョブ)を選択してJobに応じたさまざまなアクションを実行することで"
+        line3: "&7お金を稼ぐことができます"
+        line4: ""
+        line5: "&2   そのためにはまずJobを選ぶ必要があります"
+        line6: "&2どんなJobがあるかは &e/jobs list &2とうつことで確認できます."
+        line7: ""
+        line8: "&2さらにJobについて詳しく見るためには:"
+        line9: "&e/jobs [job_name] &2とうってください"
+        line10: ""
+        line11: "&e[job name] &2にはJobを入力してください, 例えば &6digger&2 のように."
+        line12: "&e/jobs join &2そして&e leave &2については次のページを見てください"
+    2:
+        line1: "&2以下のコマンドを打つことでJobに参加できます:"
+        line2: "&e/jobs join [job name]"
+        line3: ""
+        line4: "&2Jobに参加すると各Jobごとにお金を稼ぐことができます...(時には失ったりすることも...)"
+        line5: "&2このサーバーでは最大"
+        line6: "&2&c%j&2個のJobに参加できます."
+        line7: ""
+        line8: "&2Jobを抜けるには &e/jobs leave [job name]&2とうってください"
+        line9: "&2最大数までJobに参加した場合、新しいJobに参加するには,"
+        line10: "&2いま参加しているJobの中からどれか一つを抜ける必要があります."
+        line11: ""
+        line12: "&2&e/jobs list&2について詳しく見るには3ページ目を見てください"
+    3:
+        line1: "&2   listコマンドはとても簡単です"
+        line2: "&2あなたがいまどのJobに参加できてどのJobに参加できないのかが"
+        line3: "&2ひと目で分かります"
+        line4: ""
+        line5: "&2今あなたが参加しているJobは&c赤色&2で、あなたが参加できるJobは"
+        line6: "&6金色で&2、あなたが参加できないJobは&8グレー&2で表示されます."
+        line7: ""
+        line8: "&2デフォルトのJobは &3青色&2で表示されます.  これらのJobは"
+        line9: "&2サーバーに参加した時にすべてのプレイヤーが強制的に参加させられます"
+        line10: "&2&cmcjobs.admin.leavedefault&2 という権限を持ったプレイヤーのみ &3デフォルトのJob&2を抜けることができます."
+        line11: ""
+        line12: "&2続きを見るには4ページ目を表示してください"
+    4:
+        line1: "&2Lastly it tells you how many jobs you have versus the max"
+        line2: "&2jobs the server allows, which is &c%j&2 on this server." 
+        line3: "" 
+        line4: "&2  The &e/jobs leave&2 command works the same as the &ejoin"
+        line5: "&2command.  You can only leave jobs that you have already"
+        line6: "&2joined.  This will allow you to pick up new jobs in case you"
+        line7: "&2change your mind on what you want to be."
+        line8: ""
+        line9: "&2Once you leave a job you cannot rejoin it for a server"
+        line10: "&2specified time frame.  The default is 1 hour."
+        line11: ""
+        line12: "&2To learn about &e/jobs [job name] continue to next page"
+    5:
+        line1: "&2  &e/jobs [job name]&2 コマンドは指定したJobについて"
+        line2: "&2必要な全ての情報を見ることができます"
+        line3: ""
+        line4: "&2The first line starts with the &3jobs name&2 and is followed by"
+        line5: "&2whether you are &cemployed&2 by the job or whether you are"
+        line6: "&2not part of the job.  In which case it will say &9unemployed&2."
+        line7: "&2Next it tells you the &abase pay&2 of the job.  This figure is how"
+        line8: "&2much money or xp &6TIER1&2 will pay you upon doing the &eaction&2."
+        line9: "&2The last bit of information this line tells the player is whether"
+        line10: "&2the job &apays&2 or &ccharges&2 the player for completing &eactions&2."
+        line11: ""
+        line12: "&2The next page will explain the subsequent lines of &e/jobs [job]"
+    6:
+        line1: "&2As said a job can both &apay&2 and &ccharge&2 the player.  As an"
+        line2: "&2example, the &6miner&2 job &apays&2 the player for breaking &7iron ore&2."
+        line3: "&2However if you place &7iron ore&2 it will &ccharge&2 you money instead."
+        line4: ""
+        line5: "&2If you are currently &cemployed&2 with the job it will show you"
+        line6: "&2your current &6level&2 and &6rank&2 in the job."
+        line7: "&2The second line is the jobs &6description&2."
+        line8: ""
+        line9: "&2After the dashes is what the jobs &eactions&2 are and what blocks"
+        line10: "&2or entities are used by the job."
+        line11: ""
+        line12: "&2&eアクションについては&2次のページを見てください."
+    7:
+        line1: "&2アクションは次の種類があります: &6破壊&2, &6設置&2, &6殺害&2, &6作成&2, &6修復&2,"
+        line2: "&6釣り&2, &6ポーション&2, そして &6エンチャント&2."
+        line3: ""
+        line4: "&6破壊&2: Is the action of breaking blocks like &7dirt&2."
+        line5: "&6設置&2: Is the action of placing blocks like &7stone stairs&2."
+        line6: "&6殺害&2: Is the action of killing monsters like &7spiders&2."
+        line7: "&6作成&2: Is the action of crafting items like &7wood sword&2."
+        line8: "&6修復&2: Is the action of repairing items like &7stone shovel&2."
+        line9: "&2This covers both the &6mcMMO&2 repair and the vanilla repair."
+        line10: "&6釣り&2: &aPays&2 or &ccharges&2 whenever you use a fishing rod to"
+        line11: "&2catch an entity or fish."
+        line12: "&6ポーション&2 と &6エンチャント&2 については次のページを見てください."
+    8:
+        line1: "&6ポーション&2: &aPays&2 or &ccharges&2 for using a brew stand to make"
+        line2: "&2potions."
+        line3: "&6エンチャント&2: &aPays&2 or &ccharges&2 when the player enchants an item."
+        line4: ""
+        line5: "&eEnglish&c 翻訳: &6RathelmMC"
+        line6: "&eFrench&c 翻訳: &6Monezombie"
+        line7: "&eGerman&c 翻訳: &6Not Implemented"
+        line8: "&eNederlandse&c 翻訳: &6Dreeass"
+        line9: "&eRussian&c 翻訳: &6&6Grim_joy"
+        line10: "&eSpanish&c 翻訳: &6Not Implemented"
+        line11: "&eJapanese&c 翻訳: &6&6FSV_Mirai"
+        line12: ""
+    endofpage: "&7%gについて詳しく知るには"
+    command: "&6/jobs help %g"
+    finish: "&7ヘルプファイルはここで終わりです"
+    nohelp: "&7%g&cはヘルプページではありません"
+
+admincommand:
+    permission: "&6%p&c 権限がありません"
+    failedreload: "&cプラグインのリロードに失敗しました"
+    succeedreload: "&6MC Jobs&cをリロードしました"
+    defaults: "&7config.ymlにデフォルトが追加されました"
+    args: "&c&e/jadm&cに対する引数が多すぎます"
+    exist: "&6%j&cは存在しません"
+
+adminadd:
+    args: "&c正しくない引数です:  &e/jadm add [player/group] [job_name]"
+    offline: "&6%p&cは存在しないグループもしくはオフラインのプレイヤーです"
+    novault: "&6%p&cは存在しないプレイヤーです"
+    hasjob: "&6%p&7は既に&9%j&7に参加しています."
+    empty: "&7There are no &eplayers&7 online in the &6%p&7 group."
+    added: "&6%p&7は&9%j&7に追加されました."
+    padded: "&6%p&2 あなたはサーバー運営によって&9%j&2に追加されました"
+
+adminremove:
+    args: "&c正しくない引数です:  &e/jadm remove [player/group] [job_name]"
+    nojob: "&6%p&7 は&9%j&7に参加していません."
+    nodefault: "&6%p&c &3デフォルトのJob&cから削除する権限がありません"
+    removed: "&6%p&7は&9%j&7から削除されました."
+    premoved: "&6%p&2 あなたはサーバー運営によって&9%j&2から削除されました"
+
+
+adminlist:
+    args: "&cWrong arguments:  &e/jadm list [player/group]"
+    playerlist: "&2%p&7: %g"
+    nojobs: "&2%p&c has no jobs."
+    wrongpage: "&e%g is not a proper page number.  Using page 1 instead."
+
+pitch:
+    line0: "This server runs:"
+    line1: "&aTo see what jobs are available type: &e/jobs list"
+    line2: "&aTo join a job type: &e/jobs join [job_name]"
+    line3: "&aPlay, &2earn money&a, and have fun!"
+    
+onadminlogin:
+    toolow: "&eYour pay scale is too low for an &6XP&e based economy.  Consider switching &2pay_scale&e to high in the config.yml file."
+    outofdate: "&eConfig.yml is out of date.  &6MC Jobs&e may not work properly without reloading the config file."
+
+experience:
+    level: "&eYou are now level &6%g&e in &6%j&e."
+    reset: "&eYour level in &6%j&e has been reset to &c0&e."
+    rank:  "&eYou are now rank &6%g&e in &6%j&e."
+    added_lvl: "&7You have given &6%p &a%g&7 levels in &6%j&7."
+    padded_lvl: "&7You have been given &a%g&7 levels in &6%j&7 by a system admin."
+    added_xp: "&7You have given &6%p &a%g&7 experience in &6%j&7."
+    padded_xp: "&7You have been given &a%g&7 experience in &6%j&7 by a system admin."
+    nojob: "&6%p&c doesn't have the &6%j&c job."
+
+payment:
+    pay: "&aThe &6%j&a job has paid you &6%g&a %p."
+    payxp: "&aThe &6%j&a job has earned you &6%g&a experience."
+    charge: "&aThe &6%j&a job has cost you &c%g&a %p."
+    chargexp: "&aThe &6%j&a job has taken &c%g&a experience."
+    currency_single: dollar
+    currency_plural: dollars
+    
+spaces:
+    jobslist: 16
+    display: 4
+    displaytwo: 8
+    displaythree: 4
+    chargelen: 7
+    numhelp: 8
+
+entities:
+    blaze:        Blaze
+    cow:          Cow
+    cave_spider:  Cave Spider
+    chicken:      Chicken
+    creeper:      Creeper
+    dropped_item: Fish
+    ender_dragon: Ender Dragon
+    enderman:     Ender Man
+    ghast:        Ghast
+    giant:        Giant
+    iron_golem:   Iron Golem
+    magma_cube:   Magma Cube
+    mushroom_cow: Mooshroom Cow
+    npc:          NPC
+    ocelot:       Ocelot
+    pig:          Pig
+    pig_zombie:   Pig Zombie
+    player:       Player
+    sheep:        Sheep
+    silverfish:   Silverfish
+    skeleton:     Skeleton
+    slime:        Slime
+    snowman:      Snowman
+    spider:       Spider
+    squid:        Squid
+    villager:     Villager
+    wolf:         Wolf
+    zombie:       Zombie
+
+potions:
+    water:            Water
+    awkward:          Awkward
+    thick:            Thick
+    mundane:          Mundane
+    mundane_ext:      Mundane Extend
+    regen:            Regen
+    regen_ext:        Regen Extend
+    regen_two:        Regen II
+    regen_two_ext:    Regen II Extend
+    regen_spl:        Regen Splash
+    regen_ext_spl:    Regen Extend Splash
+    regen_two_spl:    Regen II Splash
+    swift:            Swift
+    swift_ext:        Swift Extend
+    swift_two:        Swift II
+    swift_two_ext:    Swift II Extend
+    swift_spl:        Swift Splash
+    swift_ext_spl:    Swift Extend Splash
+    swift_two_spl:    Swift II Splash
+    fire_res:         Fire Resist
+    fire_res_ext:     Fire Resist Extend
+    fire_res_spl:     Fire Resist Splash
+    fire_res_ext_spl: Fire Resist Extend Splash
+    poison:           Poison
+    poison_ext:       Poison Extend
+    poison_two:       Poison II
+    poison_two_ext:   Poison II Extend
+    poison_spl:       Poison Splash
+    poison_ext_spl:   Poison Extend Splash
+    poison_two_spl:   Poison II Splash
+    health:           Healing
+    health_two:       Healing II
+    health_spl:       Healing Splash
+    health_two_spl:   Healing II Splash
+    weak:             Weak
+    weak_ext:         Weak Extend
+    weak_two:         Weak II
+    weak_spl:         Weak Splash
+    weak_ext_spl:     Weak Extend Splash
+    weak_two_spl:     Weak II Splash
+    strength:         Strength
+    strength_ext:     Strength Extend
+    strength_two:     Strength II
+    strength_two_ext: Strength II Extend
+    strength_spl:     Strength Splash
+    strength_ext_spl: Strength Extend Splash
+    strength_two_spl: Strength II Splash
+    slow:             Slow
+    slow_ext:         Slow Extend
+    slow_two:         Slow II
+    slow_spl:         Slow Splash
+    slow_ext_spl:     Slow Extend Splash
+    slow_two_spl:     Slow II Splash
+    harm:             Harm
+    harm_two:         Harm II
+    harm_spl:         Harm Splash
+    harm_two_spl:     Harm II Splash
+    rev_fire_res:     Fire Resist
+    rev_slow:         Slow
+    rev_health:       Healing
+    rev_harm:         Harm
+    rev_weak:         Weak
+
+enchant:
+    arrow_dmg_1:      Arrow Damage I
+    arrow_dmg_2:      Arrow Damage II
+    arrow_dmg_3:      Arrow Damage III
+    arrow_dmg_4:      Arrow Damage IV
+    arrow_dmg_5:      Arrow Damage V
+    arrow_fire:       Flame Arrows
+    arrow_inf:        Infinite Arrows
+    arrow_knock_1:    Arrow Knockback I
+    arrow_knock_2:    Arrow Knockback II
+    sharp_1:          Sharpness I
+    sharp_2:          Sharpness II
+    sharp_3:          Sharpness III
+    sharp_4:          Sharpness IV
+    sharp_5:          Sharpness V
+    boa_1:            Bane of Anthropods I
+    boa_2:            Bane of Anthropods II
+    boa_3:            Bane of Anthropods III
+    boa_4:            Bane of Anthropods IV
+    boa_5:            Bane of Anthropods V
+    dmg_undead_1:     Smite I
+    dmg_undead_2:     Smite II
+    dmg_undead_3:     Smite III
+    dmg_undead_4:     Smite IV
+    dmg_undead_5:     Smite V
+    efficiency_1:     Efficiency I
+    efficiency_2:     Efficiency II
+    efficiency_3:     Efficiency III
+    efficiency_4:     Efficiency IV
+    efficiency_5:     Efficiency V
+    unbreaking_1:     Durability I
+    unbreaking_2:     Durability II
+    unbreaking_3:     Durability III
+    unbreaking_4:     Durability IV
+    unbreaking_5:     Durability V
+    fire_aspect_1:    Fire Aspect I
+    fire_aspect_2:    Fire Aspect II
+    knockback_1:      Knockback I
+    knockback_2:      Knockback II
+    fortune_1:        Fortune I
+    fortune_2:        Fortune II
+    fortune_3:        Fortune III
+    looting_1:        Looting I
+    looting_2:        Looting II
+    looting_3:        Looting III
+    respiration_1:    Respiration I
+    respiration_2:    Respiration II
+    respiration_3:    Respiration III
+    protection_1:     Protection I
+    protection_2:     Protection II
+    protection_3:     Protection III
+    protection_4:     Protection IV
+    blast_prot_1:     Blast Protection I
+    blast_prot_2:     Blast Protection II
+    blast_prot_3:     Blast Protection III
+    blast_prot_4:     Blast Protection IV
+    feather_fall_1:   Feather Fall I
+    feather_fall_2:   Feather Fall II
+    feather_fall_3:   Feather Fall III
+    feather_fall_4:   Feather Fall IV
+    fire_prot_1:      Fire Protection I
+    fire_prot_2:      Fire Protection II
+    fire_prot_3:      Fire Protection III
+    fire_prot_4:      Fire Protection IV
+    proj_prot_1:      Projectile Protection I
+    proj_prot_2:      Projectile Protection II
+    proj_prot_3:      Projectile Protection III
+    proj_prot_4:      Projectile Protection IV
+    silk_touch:       Silk Touch
+    aqua_affinity:    Aqua Affinity
+    
+materials:
+    air:                  Air
+    apple:                Apple
+    arrow:                Arrow
+    bed:                  Bed
+    bed_block:            Bed
+    bedrock:              Bedrock
+    birch_wood_stairs:    Birch Wood Stairs
+    blaze_powder:         Blaze Powder
+    blaze_rod:            Blaze Rod
+    boat:                 Boat
+    bone:                 Bone
+    book:                 Book
+    book_and_quill:       Book and Quill
+    bookshelf:            Bookshelf
+    bow:                  Bow
+    bowl:                 Bowl
+    bread:                Bread
+    brewing_stand:        Brewing Stand
+    brewing_stand_item:   Brewing Stand
+    brick:                Brick
+    brick_stairs:         Brick Stairs
+    brown_mushroom:       Brown Mushroom
+    bucket:               Iron Bucket
+    burning_furnace:      Furnace
+    cactus:               Cactus
+    cake:                 Cake
+    cake_block:           Cake
+    cauldron:             Cauldron
+    cauldron_item:        Cauldron
+    chainmail_boots:      Chainmail Boots
+    chainmail_chestplate: Chainmail Tunic
+    chainmail_helmet:     Chainmail Coif
+    chainmail_leggings:   Chainmail Leggings
+    chest:                Chest
+    clay:                 Clay
+    clay_ball:            Clay Ball
+    clay_brick:           Clay Brick
+    coal:                 Coal
+    coal_ore:             Coal Ore
+    cobblestone:          Cobblestone
+    cobblestone_stairs:   Cobblestone Stairs
+    cocoa:                Cocoa
+    compass:              Compass
+    cooked_beef:          Steak
+    cooked_chicken:       Grilled Chicken
+    cooked_fish:          Fried Fish
+    cookie:               Cookie
+    crops:                Crops
+    dead_bush:            Dead Bush
+    detector_rail:        Detector Rail
+    diamond:              Diamond
+    diamond_axe:          Diamond Axe
+    diamond_block:        Block of Diamond
+    diamond_boots:        Diamond Greaves
+    diamond_chestplate:   Diamond Chestpiece
+    diamond_helmet:       Diamond Helm
+    diamond_hoe:          Diamond Hoe
+    diamond_leggings:     Diamond Legs
+    diamond_ore:          Rough Diamond
+    diamond_pickaxe:      Diamond Pickaxe
+    diamond_spade:        Diamond Shovel
+    diamond_sword:        Diamond Sword
+    diode:                Redstone Repeater
+    diode_block_off:      Redstone Repeater
+    diode_block_on:       Redstone Repeater
+    dirt:                 Dirt
+    dispenser:            Dispenser
+    double_step:          Double Step
+    dragon_egg:           Dragon Egg
+    egg:                  Egg
+    emerald:              Emerald
+    emerald_block:        Block of Emerald
+    emerald_ore:          Emerald Ore
+    enchantment_table:    Enchantment Table
+    ender_chest:          Ender Chest
+    ender_pearl:          Ender Pearl
+    ender_portal:         Ender Portal
+    ender_portal_frame:   Ender Portal Frame
+    ender_stone:          Ender Stone
+    exp_bottle:           Experience Bottle
+    eye_of_ender:         Eye of Ender
+    feather:              Feather
+    fence:                Fence
+    fence_gate:           Fence Gate
+    fermented_spider_eye: Fermented Spider Eye
+    fire:                 Fire
+    fireball:             Fireball
+    fishing_rod:          Fishing Pole
+    flint:                Flint
+    flint_and_steel:      Flint and Steel
+    furnace:              Furnace
+    ghast_tear:           Ghast Tear
+    glass:                Glass
+    glass_bottle:         Bottle
+    glowing_redstone_ore: Redstone Ore
+    glowstone:            Glowstone
+    glowstone_dust:       Glowstone Dust
+    gold_axe:             Gold Axe
+    gold_block:           Block of Gold
+    gold_boots:           Gold Slippers
+    gold_chestplate:      Gold Breastplate
+    gold_helmet:          Gold Helm
+    gold_hoe:             Gold Hoe
+    gold_ingot:           Gold Ingot
+    gold_leggings:        Gold Skirt
+    gold_nugget:          Gold Nugget
+    gold_ore:             Gold Ore
+    gold_pickaxe:         Gold Pickaxe
+    gold_record:          Record c418 - 13
+    gold_spade:           Gold Shovel
+    gold_sword:           Gold Sword
+    golden_apple:         Golden Apple
+    grass:                Dirt
+    gravel:               Gravel
+    green_record:         Record c418 - cat
+    grilled_pork:         Baby Back Ribs
+    huge_mushroom_1:      Giant Mushroom
+    huge_mushroom_2:      Giant Mushroom
+    ice:                  Ice
+    ink_sack:             Squid Ink
+    iron_axe:             Iron Axe
+    iron_block:           Block of Iron
+    iron_boots:           Iron Greaves
+    iron_chestplate:      Iron Chestplate
+    iron_door:            Iron Door
+    iron_door_block:      Iron Door
+    iron_fence:           Iron Fence
+    iron_helmet:          Iron Helm
+    iron_hoe:             Iron Hoe
+    iron_ingot:           Iron Ingot
+    iron_leggings:        Iron Leggings
+    iron_ore:             Iron Ore
+    iron_pickaxe:         Iron Pickaxe
+    iron_spade:           Iron Shovel
+    iron_sword:           Iron Sword
+    jack_o_lantern:       Jack O' Lantern
+    jukebox:              Jukebox
+    jungle_wood_stairs:   Jungle Wood Stairs
+    ladder:               Ladder
+    lapis_block:          Block of Lapis
+    lapis_ore:            Lapis Ore
+    lava:                 Lava
+    lava_bucket:          Bucket Full of Lava
+    leather:              Strip of Leather
+    leather_boots:        Leather Shoes
+    leather_chestplate:   Leather Vest
+    leather_helmet:       Leather Cap
+    leather_leggings:     Leather Pants
+    leaves:               Leaves
+    lever:                Lever
+    locked_chest:         Locked Chest
+    log:                  Tree Log
+    long_grass:           Weeds
+    magma_cream:          Magma Cream
+    map:                  Map
+    melon:                Watermelon Slice
+    melon_block:          Watermelon
+    melon_seeds:          Watermelon Seeds
+    melon_stem:           Watermelon Plant
+    milk_bucket:          Bucket Full of Milk
+    minecart:             Minecart
+    mob_spawner:          Mob Spawner
+    monster_egg:          Monster Egg
+    monster_eggs:         Silverfish Block
+    mossy_cobblestone:    Mossy Cobblestone
+    mushroom_soup:        Bowl of Mushroom Soup
+    mycel:                Mycel
+    nether_brick:         Nether Brick
+    nether_brick_stairs:  Nether Brick Stairs
+    nether_fence:         Nether Fence
+    nether_stalk:         Nether Warts
+    nether_warts:         Nether Warts
+    netherrack:           Netherrack
+    note_block:           Note Block
+    obsidian:             Obsidian
+    painting:             Painting
+    paper:                Paper
+    piston_base:          Piston
+    piston_extension:     Piston
+    piston_moving_piece:  Piston
+    piston_sticky_base:   Sticky Piston
+    pork:                 Raw Pork
+    portal:               Portal
+    potion:               Potion
+    powered_minecart:     Powered Minecart
+    powered_rail:         Powered Rail
+    pumpkin:              Pumpkin
+    pumpkin_seeds:        Pumpkin Seeds
+    pumpkin_stem:         Pumpkin Plant
+    rails:                Train Tracks
+    raw_beef:             Raw Steak
+    raw_chicken:          Raw Chicken
+    raw_fish:             Raw Fish
+    record_10:            Record c418 - ward
+    record_11:            Record c418 - 11
+    record_3:             Record c418 - blocks
+    record_4:             Record c418 - chirp
+    record_5:             Record c418 - far
+    record_6:             Record c418 - mall
+    record_7:             Record c418 - mellohi
+    record_8:             Record c418 - stal
+    record_9:             Record c418 - strad
+    red_mushroom:         Red Mushroom
+    red_rose:             Red Rose
+    redstone:             Redstone Dust
+    redstone_lamp_off:    Redstone Lamp
+    redstone_lamp_on:     Redstone Lamp
+    redstone_ore:         Redstone Ore
+    redstone_torch_off:   Redstone Torch
+    redstone_torch_on:    Redstone Torch
+    redstone_wire:        Redstone Dust
+    rotten_flesh:         Zombie Flesh
+    saddle:               Saddle
+    sand:                 Sand
+    sandstone:            Sandstone Brick
+    sandstone_stairs:     Sandstone Stairs
+    sapling:              Tree Sapling
+    seeds:                Seeds
+    shears:               Shears
+    sign:                 Wood Sign
+    sign_post:            Wood Sign
+    slime_ball:           Slime Ball
+    smooth_brick:         Smooth Brick
+    smooth_stairs:        Smooth Brick Stairs
+    snow:                 Snow
+    snow_ball:            Snow Ball
+    snow_block:           Snow Block
+    soil:                 Soil
+    soul_sand:            Soul Sand
+    speckled_melon:       Speckled Melon
+    spider_eye:           Spider Eye
+    sponge:               Sponge
+    spruce_wood_stairs:   Spruce Wood Stairs
+    stationary_lava:      Lava
+    stationary_water:     Water
+    step:                 Step
+    stick:                Stick
+    stone:                Stone
+    stone_axe:            Stone Axe
+    stone_button:         Stone Button
+    stone_hoe:            Stone Hoe
+    stone_pickaxe:        Stone Pickaxe
+    stone_plate:          Stone Pressure Plate
+    stone_spade:          Stone Shovel
+    stone_sword:          Stone Sword
+    storage_minecart:     Storage Minecart
+    string:               String
+    sugar:                Sugar
+    sugar_cane:           Sugar Cane
+    sugar_cane_block:     Sugar Cane
+    sulphur:              Gunpowder
+    thin_glass:           Glass Panes
+    tnt:                  TNT
+    torch:                Torch
+    trap_door:            Trap Door
+    tripwire:             Trip Wire
+    tripwire_hook:        Trip Wire Hook
+    vine:                 Vine
+    wall_sign:            Wood Sign
+    watch:                Watch
+    water:                Water
+    water_bucket:         Bucket Full of Water
+    water_lily:           Water Lily
+    web:                  Web
+    wheat:                Wheat
+    wood:                 Wood
+    wood_axe:             Wood Axe
+    wood_door:            Wooden Door
+    wood_double_step:     Wooden Step
+    wood_hoe:             Wood Hoe
+    wood_pickaxe:         Wood Pickaxe
+    wood_plate:           Wood Pressure Plate
+    wood_spade:           Wood Shovel
+    wood_stairs:          Wooden Stairs
+    wood_step:            Wood Step
+    wood_sword:           Wood Sword
+    wooden_door:          Wooden Door
+    wool:                 Wool
+    workbench:            Workbench
+    written_book:         Written Book
+    yellow_flower:        Yellow Flower
+
+# End of File
