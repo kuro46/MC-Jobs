@@ -144,22 +144,22 @@ jobshelp:
         line11: ""
         line12: "&2&eアクションについては&2次のページを見てください."
     7:
-        line1: "&2アクションは次の種類があります: &6破壊&2, &6設置&2, &6殺害&2, &6作成&2, &6修復&2,"
+        line1: "&2アクションは次の種類があります: &6破壊&2, &6設置&2, &6討伐&2, &6作成&2, &6修復&2,"
         line2: "&6釣り&2, &6ポーション&2, そして &6エンチャント&2."
         line3: ""
-        line4: "&6破壊&2: Is the action of breaking blocks like &7dirt&2."
-        line5: "&6設置&2: Is the action of placing blocks like &7stone stairs&2."
-        line6: "&6殺害&2: Is the action of killing monsters like &7spiders&2."
-        line7: "&6作成&2: Is the action of crafting items like &7wood sword&2."
-        line8: "&6修復&2: Is the action of repairing items like &7stone shovel&2."
-        line9: "&2This covers both the &6mcMMO&2 repair and the vanilla repair."
-        line10: "&6釣り&2: &aPays&2 or &ccharges&2 whenever you use a fishing rod to"
-        line11: "&2catch an entity or fish."
+        line4: "&6破壊&2: これはブロックを壊すアクションです."
+        line5: "&6設置&2: これはブロックを設置するアクションです."
+        line6: "&6討伐&2: これはモンスターを倒すアクションです."
+        line7: "&6作成&2: これはアイテムをクラフトするアクションです."
+        line8: "&6修復&2: これは金床などでアイテムを修復するアクションです."
+        line9: ""
+        line10: "&6釣り&2: 釣竿で魚またはエンティティ(モンスターや動物など)を捕まえるたびに"
+        line11: "&2お金を支払う、または受け取ります (※正しく翻訳できていない可能性があります)"
         line12: "&6ポーション&2 と &6エンチャント&2 については次のページを見てください."
     8:
-        line1: "&6ポーション&2: &aPays&2 or &ccharges&2 for using a brew stand to make"
-        line2: "&2potions."
-        line3: "&6エンチャント&2: &aPays&2 or &ccharges&2 when the player enchants an item."
+        line1: "&6ポーション&2: ポーションを作るために"
+        line2: "&2お金を支払う、または受け取ります. (※正しく翻訳できていない可能性があります)"
+        line3: "&6エンチャント&2: アイテムにエンチャントするたびにお金を支払う、または受け取ります (※正しく翻訳できていない可能性があります)"
         line4: ""
         line5: "&eEnglish&c 翻訳: &6RathelmMC"
         line6: "&eFrench&c 翻訳: &6Monezombie"
@@ -187,7 +187,7 @@ adminadd:
     offline: "&6%p&cは存在しないグループもしくはオフラインのプレイヤーです"
     novault: "&6%p&cは存在しないプレイヤーです"
     hasjob: "&6%p&7は既に&9%j&7に参加しています."
-    empty: "&7There are no &eplayers&7 online in the &6%p&7 group."
+    empty: "&7&6%p&7にオンラインのプレイヤーはいません"
     added: "&6%p&7は&9%j&7に追加されました."
     padded: "&6%p&2 あなたはサーバー運営によって&9%j&2に追加されました"
 
@@ -200,10 +200,10 @@ adminremove:
 
 
 adminlist:
-    args: "&cWrong arguments:  &e/jadm list [player/group]"
+    args: "&c正しくない引数です:  &e/jadm list [player/group]"
     playerlist: "&2%p&7: %g"
-    nojobs: "&2%p&c has no jobs."
-    wrongpage: "&e%g is not a proper page number.  Using page 1 instead."
+    nojobs: "&2%p&cはJobに参加していません."
+    wrongpage: "&e%gは正しいページ番号ではありません"
 
 pitch:
     line0: "This server runs:"
