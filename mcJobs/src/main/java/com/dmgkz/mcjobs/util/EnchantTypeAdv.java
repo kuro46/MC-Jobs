@@ -15,8 +15,8 @@ public enum EnchantTypeAdv {
     ARROW_INF("arrow_inf", Enchantment.ARROW_INFINITE, 1),
     ARROW_KNOCK_1("arrow_knock_1", Enchantment.ARROW_KNOCKBACK, 1),
     ARROW_KNOCK_2("arrow_knock_2", Enchantment.ARROW_KNOCKBACK, 2),
-    SHARP_1("sharp_1", Enchantment.DAMAGE_ALL, 1), 
-    SHARP_2("sharp_2", Enchantment.DAMAGE_ALL, 2), 
+    SHARP_1("sharp_1", Enchantment.DAMAGE_ALL, 1),
+    SHARP_2("sharp_2", Enchantment.DAMAGE_ALL, 2),
     SHARP_3("sharp_3", Enchantment.DAMAGE_ALL, 3),
     SHARP_4("sharp_4", Enchantment.DAMAGE_ALL, 4),
     SHARP_5("sharp_5", Enchantment.DAMAGE_ALL, 5),
@@ -57,34 +57,34 @@ public enum EnchantTypeAdv {
     FORTUNE_2("fortune_2", Enchantment.LOOT_BONUS_BLOCKS, 2),
     FORTUNE_3("fortune_3", Enchantment.LOOT_BONUS_BLOCKS, 3),
     LOOTING_1("looting_1", Enchantment.LOOT_BONUS_MOBS, 1),
-    LOOTING_2("looting_2", Enchantment.LOOT_BONUS_MOBS, 2), 
-    LOOTING_3("looting_3", Enchantment.LOOT_BONUS_MOBS, 3), 
-    RESPIRATION_1("respiration_1", Enchantment.OXYGEN, 1), 
-    RESPIRATION_2("respiration_2", Enchantment.OXYGEN, 2), 
-    RESPIRATION_3("respiration_3", Enchantment.OXYGEN, 3), 
+    LOOTING_2("looting_2", Enchantment.LOOT_BONUS_MOBS, 2),
+    LOOTING_3("looting_3", Enchantment.LOOT_BONUS_MOBS, 3),
+    RESPIRATION_1("respiration_1", Enchantment.OXYGEN, 1),
+    RESPIRATION_2("respiration_2", Enchantment.OXYGEN, 2),
+    RESPIRATION_3("respiration_3", Enchantment.OXYGEN, 3),
     PROTECTION_1("protection_1", Enchantment.PROTECTION_ENVIRONMENTAL, 1),
     PROTECTION_2("protection_2", Enchantment.PROTECTION_ENVIRONMENTAL, 2),
     PROTECTION_3("protection_3", Enchantment.PROTECTION_ENVIRONMENTAL, 3),
     PROTECTION_4("protection_4", Enchantment.PROTECTION_ENVIRONMENTAL, 4),
-    BLAST_PROT_1("blast_prot_1", Enchantment.PROTECTION_EXPLOSIONS, 1), 
-    BLAST_PROT_2("blast_prot_2", Enchantment.PROTECTION_EXPLOSIONS, 2), 
-    BLAST_PROT_3("blast_prot_3", Enchantment.PROTECTION_EXPLOSIONS, 3), 
-    BLAST_PROT_4("blast_prot_4", Enchantment.PROTECTION_EXPLOSIONS, 4), 
-    FEATHER_FALL_1("feather_fall_1", Enchantment.PROTECTION_FALL, 1), 
-    FEATHER_FALL_2("feather_fall_2", Enchantment.PROTECTION_FALL, 2), 
-    FEATHER_FALL_3("feather_fall_3", Enchantment.PROTECTION_FALL, 3), 
-    FEATHER_FALL_4("feather_fall_4", Enchantment.PROTECTION_FALL, 4), 
+    BLAST_PROT_1("blast_prot_1", Enchantment.PROTECTION_EXPLOSIONS, 1),
+    BLAST_PROT_2("blast_prot_2", Enchantment.PROTECTION_EXPLOSIONS, 2),
+    BLAST_PROT_3("blast_prot_3", Enchantment.PROTECTION_EXPLOSIONS, 3),
+    BLAST_PROT_4("blast_prot_4", Enchantment.PROTECTION_EXPLOSIONS, 4),
+    FEATHER_FALL_1("feather_fall_1", Enchantment.PROTECTION_FALL, 1),
+    FEATHER_FALL_2("feather_fall_2", Enchantment.PROTECTION_FALL, 2),
+    FEATHER_FALL_3("feather_fall_3", Enchantment.PROTECTION_FALL, 3),
+    FEATHER_FALL_4("feather_fall_4", Enchantment.PROTECTION_FALL, 4),
     FIRE_PROT_1("fire_prot_1", Enchantment.PROTECTION_FIRE, 1),
     FIRE_PROT_2("fire_prot_2", Enchantment.PROTECTION_FIRE, 2),
-    FIRE_PROT_3("fire_prot_3", Enchantment.PROTECTION_FIRE, 3), 
-    FIRE_PROT_4("fire_prot_4", Enchantment.PROTECTION_FIRE, 4), 
-    PROJ_PROT_1("proj_prot_1", Enchantment.PROTECTION_PROJECTILE, 1), 
-    PROJ_PROT_2("proj_prot_2", Enchantment.PROTECTION_PROJECTILE, 2), 
-    PROJ_PROT_3("proj_prot_3", Enchantment.PROTECTION_PROJECTILE, 3), 
-    PROJ_PROT_4("proj_prot_4", Enchantment.PROTECTION_PROJECTILE, 4), 
+    FIRE_PROT_3("fire_prot_3", Enchantment.PROTECTION_FIRE, 3),
+    FIRE_PROT_4("fire_prot_4", Enchantment.PROTECTION_FIRE, 4),
+    PROJ_PROT_1("proj_prot_1", Enchantment.PROTECTION_PROJECTILE, 1),
+    PROJ_PROT_2("proj_prot_2", Enchantment.PROTECTION_PROJECTILE, 2),
+    PROJ_PROT_3("proj_prot_3", Enchantment.PROTECTION_PROJECTILE, 3),
+    PROJ_PROT_4("proj_prot_4", Enchantment.PROTECTION_PROJECTILE, 4),
     SILK_TOUCH("silk_touch", Enchantment.SILK_TOUCH, 1),
     AQUA_AFFINITY("aqua_affinity", Enchantment.WATER_WORKER, 1);
-    
+
 
     private final String _name;
     private final Enchantment _enchant;
@@ -95,9 +95,9 @@ public enum EnchantTypeAdv {
     private static final Map<EnchantTypeAdv, Integer> _LEVEL_MAP;
 
     static {
-        _NAME_MAP = new HashMap();
-        _ENCHANT_MAP = new HashMap();
-        _LEVEL_MAP = new HashMap();
+        _NAME_MAP = new HashMap<>();
+        _ENCHANT_MAP = new HashMap<>();
+        _LEVEL_MAP = new HashMap<>();
         for (EnchantTypeAdv type : values()) {
             if(type._name != null)
                 _NAME_MAP.put(type._name.toLowerCase(), type);
@@ -109,29 +109,30 @@ public enum EnchantTypeAdv {
                 _LEVEL_MAP.put(type, type._value);
         }
     }
-  
+
     private EnchantTypeAdv(String name, Enchantment enchant, Integer value) {
         _name = name;
         _enchant = enchant;
         _value = value;
-        _enchantMap = new HashMap();
+        _enchantMap = new HashMap<>();
     }
-  
+
     public static EnchantTypeAdv getEnchantAdv(String str) {
         EnchantTypeAdv eta = null;
         if(_NAME_MAP.containsKey(str.toLowerCase()))
             eta = _NAME_MAP.get(str.toLowerCase());
         return eta;
     }
-  
+
     public static EnchantTypeAdv getEnchantAdv(Enchantment enchant, Integer value) {
         for(Map.Entry<EnchantTypeAdv, Map<Enchantment, Integer>> e : _ENCHANT_MAP.entrySet()) {
-            if(e.getValue().containsKey(enchant) && e.getValue().get(enchant) == value)
+            if(e.getValue().containsKey(enchant) && e.getValue().get(enchant).equals(value)) {
                 return e.getKey();
+            }
         }
         return null;
     }
-  
+
     public static Enchantment getEnchant(String str) {
         Enchantment enchant = null;
         if(_NAME_MAP.containsKey(str.toLowerCase()))
@@ -146,7 +147,7 @@ public enum EnchantTypeAdv {
     public Enchantment getEnchant() {
         return _enchant;
     }
-    
+
     public String getName() {
         return _name;
     }

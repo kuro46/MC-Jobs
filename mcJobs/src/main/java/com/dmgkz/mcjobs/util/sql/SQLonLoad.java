@@ -17,21 +17,17 @@ public class SQLonLoad {
 	private static String user = "";
 	private static String pass = "";
 	private static String url = "";
-	
+
 	public static void loadSQL(String user, String pass, String url){
 		SQLonLoad.user = user;
 		SQLonLoad.pass = pass;
 		SQLonLoad.url = url;
 
-		Connection conn = getConnection();
-		Bukkit.getLogger().info(conn.toString());
 
 
-		try{
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
-//			String url = "jdbc:mysql://localhost:3306/minesql";
-			
-			Statement stmt = conn.createStatement();
+		try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {
+            Bukkit.getLogger().info(conn.toString());
+
 			DatabaseMetaData md = conn.getMetaData();
 			ResultSet rs = md.getTables(null, null, "mcjobs_jobs", null);
 
@@ -48,29 +44,21 @@ public class SQLonLoad {
 			else{
 				Bukkit.getLogger().info("Database exists!");
 			}
-			
+
 			Bukkit.getLogger().info(conn.toString());
 			Bukkit.getLogger().info("MYSQL connection established!");
 		}
 		catch(Exception e){
 			Bukkit.getLogger().severe("Unable to load MYSQL driver!  Or Connection Failed!");
 		}
-
-		try {
-			conn.close();
-		} catch (SQLException e) {
-			Bukkit.getLogger().severe("Unable to close connection!");
-		}
 	}
 
 	public static Connection getConnection(){
-		Connection conn = null;
-
 		try {
-			conn = DriverManager.getConnection(url, user, pass);
+			return DriverManager.getConnection(url, user, pass);
 		} catch (SQLException e) {
 			McJobs.getPlugin().getLogger().severe("SQL Connection failed!");
+            return null;
 		}
-		return conn;
 	}
 }

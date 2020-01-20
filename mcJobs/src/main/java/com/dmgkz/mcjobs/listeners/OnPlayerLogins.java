@@ -20,33 +20,33 @@ public class OnPlayerLogins implements Listener{
 	public void onPlayerJoin(PlayerJoinEvent event){
 		Player play = event.getPlayer();
 		Integer version = McJobs.getPlugin().getVersion();
-		
+
 		PlayerCache.verifyPlayerCache(play.getName());
-		
+
 		if((play.hasPermission("mcjobs.admin") || play.isOp())){
 /*			if(McJobs.getPlugin().isPayXP() && (McJobs.getPlugin().getPayScale().equalsIgnoreCase("low") || McJobs.getPlugin().getPayScale().equalsIgnoreCase("normal"))){
 				PrettyText text = new PrettyText();
 				String str = McJobs.getPlugin().getLanguage().getAdminLogin("toolow").addVariables("", play.getName(), "");
-				text.formatPlayerText(str, play);				
+				text.formatPlayerText(str, play);
 			} */
-			
-			if(version != McJobs.VERSION || version == null){
+
+			if(version == null || version.equals(McJobs.VERSION)) {
 				PrettyText text = new PrettyText();
 				String str = McJobs.getPlugin().getLanguage().getAdminLogin("outofdate").addVariables("", play.getName(), "");
 				text.formatPlayerText(str, play);
 			}
 		}
-		
+
 		if(!play.hasPermission("mcjobs.admin.leavedefault")){
 			Iterator<Entry<String, PlayerJobs>> it = PlayerJobs.getJobsList().entrySet().iterator();
 
 			while(it.hasNext()){
 				Entry<String, PlayerJobs> pair = it.next();
-				
+
 				if(pair.getValue().getData().compJob().isDefault()){
 					PlayerCache.addJob(play.getName(), pair.getKey());
 				}
 			}
-		}			
+		}
 	}
 }

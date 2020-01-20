@@ -11,9 +11,9 @@ public class StringToArrayList {
 		ArrayList<Material> tier = new ArrayList<Material>();
 		int list = 0;
 		String temp = "";
-		
+
 		while(list < str.length()){
-			if(((str.charAt(list) == ',' || str.charAt(list) == ' ') && temp != "") || list + 1 == str.length()){
+			if(((str.charAt(list) == ',' || str.charAt(list) == ' ') && !temp.isEmpty()) || list + 1 == str.length()){
 				if(str.charAt(list) != ',' && str.charAt(list) != ' ')
 					temp = temp.concat(Character.toString(str.charAt(list)));
 				temp = temp.toUpperCase();
@@ -26,16 +26,16 @@ public class StringToArrayList {
 				list++;
 			}
 		}
-		
+
 		return tier;	}
 
 	public static ArrayList<EntityType> getEntityList(String str){
 		ArrayList<EntityType> tier = new ArrayList<EntityType>();
 		int list = 0;
 		String temp = "";
-		
+
 		while(list < str.length()){
-			if(((str.charAt(list) == ',' || str.charAt(list) == ' ') && temp != "") || list + 1 == str.length()){
+			if(((str.charAt(list) == ',' || str.charAt(list) == ' ') && !temp.isEmpty()) || list + 1 == str.length()){
 				if(str.charAt(list) != ',' && str.charAt(list) != ' ')
 					temp = temp.concat(Character.toString(str.charAt(list)));
 				temp = temp.toUpperCase();
@@ -48,7 +48,7 @@ public class StringToArrayList {
 				list++;
 			}
 		}
-		
+
 		return tier;
 	}
 
@@ -58,7 +58,7 @@ public class StringToArrayList {
 		String temp = "";
 
 		while(list < str.length()){
-			if(((str.charAt(list) == ',' || str.charAt(list) == ' ') && temp != "") || list + 1 == str.length()){
+			if(((str.charAt(list) == ',' || str.charAt(list) == ' ') && !temp.isEmpty()) || list + 1 == str.length()){
 				if(str.charAt(list) != ',' && str.charAt(list) != ' ')
 					temp = temp.concat(Character.toString(str.charAt(list)));
 				temp = temp.toUpperCase();
@@ -71,7 +71,7 @@ public class StringToArrayList {
 				list++;
 			}
 		}
-		
+
 		return tier;
 	}
 
@@ -81,7 +81,7 @@ public class StringToArrayList {
 		String temp = "";
 
 		while(list < str.length()){
-			if(((str.charAt(list) == ',' || str.charAt(list) == ' ') && temp != "") || list + 1 == str.length()){
+			if(((str.charAt(list) == ',' || str.charAt(list) == ' ') && !temp.isEmpty()) || list + 1 == str.length()){
 				if(str.charAt(list) != ',' && str.charAt(list) != ' ')
 					temp = temp.concat(Character.toString(str.charAt(list)));
 				temp = temp.toUpperCase();
@@ -94,7 +94,7 @@ public class StringToArrayList {
 				list++;
 			}
 		}
-		
+
 		return tier;
 	}
 

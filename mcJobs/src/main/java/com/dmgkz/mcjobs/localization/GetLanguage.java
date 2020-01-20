@@ -1,5 +1,6 @@
 package com.dmgkz.mcjobs.localization;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +14,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import com.dmgkz.mcjobs.McJobs;
 import com.dmgkz.mcjobs.prettytext.AddTextVariables;
 import com.dmgkz.mcjobs.prettytext.PrettyText;
+import com.dmgkz.mcjobs.util.IOUtils;
 
 public class GetLanguage {
 	private McJobs plugin;
@@ -282,30 +284,34 @@ public class GetLanguage {
 	public void loadLanguage(String lang) throws InvalidConfigurationException{
 		String language;
 
-		if(lang == null || lang == "")
+		if(lang == null || lang.isEmpty())
 			language = "english";
 		else
 			language = lang;
 
 		if(fcLocal == null){
 			if(language.equalsIgnoreCase("custom")){
+                // もし、カスタムな言語だったら
 				if(dLocal == null){
 					dLocal = new File(plugin.getDataFolder(), "custom.yml");
 				}
 				fcLocal = YamlConfiguration.loadConfiguration(dLocal);
 
-				InputStream isLocal = plugin.getResource("english.yml");
-
 				if(!dLocal.exists()){
-					YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(isLocal));
-
+                    // TODO: ?????
+					YamlConfiguration defConfig;
+                    try (BufferedReader reader = IOUtils.createResourceReader(plugin, "english.yml")) {
+                        defConfig = YamlConfiguration.loadConfiguration(reader);
+                    } catch (IOException e) {
+                        McJobs.getPlugin().getLogger().info("Unable to load english.yml");
+                        return;
+                    }
 
 					fcLocal.setDefaults(defConfig);
 
-					try {
-						isLocal = plugin.getResource("english.yml");
-						fcLocal.load(new InputStreamReader(isLocal));
-					} catch (IOException e1) {
+					try (BufferedReader reader = IOUtils.createResourceReader(plugin, "english.yml")) {
+						fcLocal.load(reader);
+					} catch (IOException e) {
 						McJobs.getPlugin().getLogger().info("Unable to load english.yml to custom.yml");
 					}
 
@@ -322,6 +328,7 @@ public class GetLanguage {
 				}
 			}
 			else{
+                // かすたむじゃなかったら
 				String filename = language.toLowerCase() + ".yml";
 
 				if(dLocal == null){
@@ -329,25 +336,25 @@ public class GetLanguage {
 				}
 				fcLocal = YamlConfiguration.loadConfiguration(dLocal);
 
-				InputStream isLocal = plugin.getResource(filename);
-				if(isLocal != null){
-					YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(isLocal));
-					fcLocal.setDefaults(defConfig);
-				}
-				else{
-					plugin.getLogger().info(filename + " is not a valid language file!  Using English instead.");
+                try (BufferedReader reader = IOUtils.createResourceReader(plugin, filename)) {
+                    if(reader != null) {
+                        YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(reader);
+                        fcLocal.setDefaults(defConfig);
+                    } else {
+                        plugin.getLogger().info(filename + " is not a valid language file!  Using English instead.");
 
-					dLocal = new File(plugin.getDataFolder(), "english.yml");
-					fcLocal = YamlConfiguration.loadConfiguration(dLocal);
+                        dLocal = new File(plugin.getDataFolder(), "english.yml");
+                        fcLocal = YamlConfiguration.loadConfiguration(dLocal);
 
-					isLocal = plugin.getResource("english.yml");
-
-					if(isLocal != null){
-						YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(isLocal));
-						fcLocal.setDefaults(defConfig);
-					}
-				}
-			}
+                        try (BufferedReader reader1 = IOUtils.createResourceReader(plugin, "english.yml")) {
+                            YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(reader1);
+                            fcLocal.setDefaults(defConfig);
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 		}
 	}
 }

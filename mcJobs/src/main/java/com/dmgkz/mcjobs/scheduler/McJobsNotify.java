@@ -34,12 +34,9 @@ public class McJobsNotify implements Runnable {
 //		ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
 //		console.sendMessage(ChatColor.GREEN + "Sending money earned messages.");
 
-		List<Player> players = new ArrayList<Player>();
 		String time = TimeFormat.getFormatedTime(timer);
 
-		players = (List<Player>) Bukkit.getServer().getOnlinePlayers();
-
-		Iterator<Player> it = players.iterator();
+		Iterator<? extends Player> it = Bukkit.getOnlinePlayers().iterator();
 			while(it.hasNext()){
 				Player play = it.next();
 				double earned = PlayerCache.getEarnedIncome(play.getName());

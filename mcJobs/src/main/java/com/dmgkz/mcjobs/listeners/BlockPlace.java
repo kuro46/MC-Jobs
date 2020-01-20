@@ -51,11 +51,10 @@ public class BlockPlace implements Listener {
 				return;
 		}
 
-		if(MCListeners.isTowny())
-			if (block != null && play != null) {{
-			if(!PlayerCacheUtil.getCachePermission(play, loc, block, TownyPermission.ActionType.BUILD))
-				return;
-			}
+		if(MCListeners.isTowny()) {
+            if(!PlayerCacheUtil.getCachePermission(play, loc, block, TownyPermission.ActionType.BUILD)) {
+                return;
+            }
 		}
 
 		if(MCListeners.isMultiWorld()){
@@ -79,6 +78,7 @@ public class BlockPlace implements Listener {
 			if(PlayerCache.hasJob(play.getName(), sJob)){
 
 				if(McJobs.getPlugin().isLogBlock()){
+                    @SuppressWarnings("deprecation")
 					List<Integer> lTypes = Arrays.asList(event.getBlock().getTypeId());
 
 					if(McJobs.getPlugin().getBlockLogging().checkLogBlock(lTypes, play.getWorld(), play, event.getBlock().getLocation(), BlockChangeType.CREATED, timer))

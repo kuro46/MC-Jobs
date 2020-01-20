@@ -18,7 +18,7 @@ public enum PotionTypeAdv {
     REGEN_SPL("regen_spl", 16385, 3),
     REGEN_EXT_SPL("regen_ext_spl", 16449, 4),
     REGEN_TWO_SPL("regen_two_spl", 16481, 4),
-    SWIFT("swift", 8194, 2), 
+    SWIFT("swift", 8194, 2),
     SWIFT_EXT("swift_ext", 8258, 3),
     SWIFT_TWO("swift_two", 8226, 3),
     SWIFT_TWO_EXT("swift_two_ext", 8290, 4),
@@ -85,18 +85,18 @@ public enum PotionTypeAdv {
     LEAPING_SPL("leaping_spl", 16395, 4),
     LEAPING_TWO_SPL("leaping_two_spl", 16427, 5),
     LEAPING_EXT_SPL("leaping_ext_spl", 16459, 5);
-  
+
     private final Short _typeID;
     private final String _name;
     private final Short _tier;
     private static final Map<String, PotionTypeAdv> _NAME_MAP;
     private static final Map<Short, PotionTypeAdv> _ID_MAP;
     private static final Map<PotionTypeAdv, Short> _TIER;
-  
+
     static {
-        _NAME_MAP = new HashMap();
-        _ID_MAP = new HashMap();
-        _TIER = new HashMap();
+        _NAME_MAP = new HashMap<>();
+        _ID_MAP = new HashMap<>();
+        _TIER = new HashMap<>();
         for (PotionTypeAdv type : values()) {
             if(type._name != null)
                 _NAME_MAP.put(type._name.toLowerCase(), type);
@@ -106,45 +106,45 @@ public enum PotionTypeAdv {
                 _TIER.put(type, type._tier);
         }
     }
-  
+
     private PotionTypeAdv(String name, Integer value, Integer tier) {
         _typeID = value.shortValue();
         _name = name;
         _tier = tier.shortValue();
     }
-  
+
     public Short getPotionValue() {
         return _typeID;
     }
-    
+
     public String getName() {
         return _name;
     }
-  
+
     public static PotionTypeAdv getPotion(String str) {
         PotionTypeAdv type = null;
         if(_NAME_MAP.containsKey(str.toLowerCase()))
-            type = (PotionTypeAdv)_NAME_MAP.get(str.toLowerCase());
+            type = _NAME_MAP.get(str.toLowerCase());
         return type;
     }
-  
+
     public static PotionTypeAdv getPotion(Short value) {
         PotionTypeAdv type = null;
         if(_ID_MAP.containsKey(value))
             type = _ID_MAP.get(value);
         return type;
     }
-  
+
     public Short getTier() {
         return _TIER.get(this);
     }
-  
+
     public static Boolean isHigherTier(PotionTypeAdv potOne, PotionTypeAdv potTwo) {
         if((potOne == null) || (potTwo == null))
             return false;
         return (potOne.getTier() > potTwo.getTier());
     }
-  
+
     public static PotionTypeAdv getMakeResults(Short potionType, Material material) {
         PotionTypeAdv newPotion = null;
         if(material == Material.NETHER_STALK) {

@@ -1,6 +1,7 @@
 package com.dmgkz.mcjobs;
 
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -43,6 +44,7 @@ import com.dmgkz.mcjobs.scheduler.McJobsNotify;
 import com.dmgkz.mcjobs.scheduler.McJobsPreComp;
 import com.dmgkz.mcjobs.scheduler.McJobsRemovePerm;
 import com.dmgkz.mcjobs.util.PlayerUtils;
+import com.dmgkz.mcjobs.util.IOUtils;
 import com.palmergames.bukkit.towny.Towny;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
@@ -282,10 +284,12 @@ public class McJobs extends JavaPlugin {
 		if(!job_file.exists()){
 			file.createNewFile();
 
-			InputStream is = plugin.getResource("jobs.yml");
-			YamlConfiguration job_configure = YamlConfiguration.loadConfiguration(new InputStreamReader(is));
+            YamlConfiguration jobConfigure;
+            try (BufferedReader reader = IOUtils.createResourceReader(plugin, "jobs.yml")) {
+                jobConfigure = YamlConfiguration.loadConfiguration(reader);
+            }
 
-			job_configure.save(job_file);
+			jobConfigure.save(job_file);
 		}
 
 		FileConfiguration job_config = YamlConfiguration.loadConfiguration(job_file);

@@ -18,29 +18,30 @@ public class PlayerUtils {
 	private static boolean bVault = false;
 	private static boolean bFailed = false;
 	private static HashMap<String, Integer> maxdefaults = new HashMap<String, Integer>();
-	
+
 	public static int getAllowed(String player){
 		int i = maxdefaults.get("default");
-		
+
 		if(bVault){
 			if(bFailed)
 				return i;
 
 			try{
 				Permission permission = Bukkit.getServer().getServicesManager().getRegistration(net.milkbowl.vault.permission.Permission.class).getProvider();
-				List<String> lGroups = new ArrayList<String>();
-				Player play;
-			
-				if(Bukkit.getPlayer(player) != null)
-					play = Bukkit.getPlayer(player);
-				else
+                @SuppressWarnings("deprecation")
+				Player play = Bukkit.getPlayer(player);
+
+				if (play == null) {
 					return i;
-			
-				if(permission.getPlayerGroups(play) != null)
+                }
+
+                List<String> lGroups;
+				if(permission.getPlayerGroups(play) != null) {
 					lGroups = Arrays.asList(permission.getPlayerGroups(play));
-				else 
+                } else {
 					return i;
-			
+                }
+
 				Iterator<String> it = lGroups.iterator();
 				while(it.hasNext()){
 					String group = it.next().toLowerCase();
@@ -55,7 +56,7 @@ public class PlayerUtils {
 				McJobs.getPlugin().getLogger().info("Your permission mod does not support player groups.  Using default max jobs only.");
 				bFailed = true;
 			}
-			
+
 		}
 		return i;
 	}
@@ -63,7 +64,7 @@ public class PlayerUtils {
 	public static int getAllowed(){
 		return maxdefaults.get("default");
 	}
-	
+
 	public static void setVault(boolean b){
 		bVault = b;
 	}

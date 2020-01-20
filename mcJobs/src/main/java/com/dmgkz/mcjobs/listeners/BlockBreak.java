@@ -79,6 +79,7 @@ public class BlockBreak implements Listener{
 			if(PlayerCache.hasJob(play.getName(), sJob)){
 
 				if(McJobs.getPlugin().isLogBlock()){
+                    @SuppressWarnings("deprecation")
 					List<Integer> lTypes = Arrays.asList(event.getBlock().getTypeId());
 
 					if(McJobs.getPlugin().getBlockLogging().checkLogBlock(lTypes, play.getWorld(), play, event.getBlock().getLocation(), BlockChangeType.DESTROYED, timer))

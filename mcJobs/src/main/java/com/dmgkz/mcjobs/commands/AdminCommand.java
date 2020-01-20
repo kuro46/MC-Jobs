@@ -2,6 +2,7 @@ package com.dmgkz.mcjobs.commands;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -198,7 +199,6 @@ public class AdminCommand implements CommandExecutor{
 				return true;
 			}
 
-			ArrayList<String> players = new ArrayList<String>();
 			Integer pageNum;
 			String[] sList;
 			Player play = null;
@@ -226,7 +226,7 @@ public class AdminCommand implements CommandExecutor{
 				}
 			}
 
-			players = getPlayers(args[1], sender);
+			final ArrayList<String> players = getPlayers(args[1], sender);
 
 			if(!players.isEmpty()){
 
@@ -288,10 +288,12 @@ public class AdminCommand implements CommandExecutor{
 				if(PlayerCache.addLevels(play, job, levels)){
 					sender.sendMessage(ChatColor.GRAY + modText.getExperience("added_lvl").addVariables(job, play, level));
 
-					if(Bukkit.getPlayer(play) != null){
+                    @SuppressWarnings("deprecation")
+                    final Player player = Bukkit.getPlayer(play);
+					if(player != null){
 						PrettyText text = new PrettyText();
 						String str = ChatColor.GRAY + modText.getExperience("padded_lvl").addVariables(job, play, level);
-						text.formatPlayerText(str, Bukkit.getPlayer(play));
+						text.formatPlayerText(str, player);
 					}
 				}
 			}
@@ -328,10 +330,12 @@ public class AdminCommand implements CommandExecutor{
 				if(PlayerCache.addExp(play, job, experience)){
 					sender.sendMessage(ChatColor.GRAY + modText.getExperience("added_xp").addVariables(job, play, level));
 
-					if(Bukkit.getPlayer(play) != null){
+                    @SuppressWarnings("deprecation")
+                    final Player player = Bukkit.getPlayer(play);
+					if(player != null){
 						PrettyText text = new PrettyText();
 						String str = ChatColor.GRAY + modText.getExperience("padded_xp").addVariables(job, play, level);
-						text.formatPlayerText(str, Bukkit.getPlayer(play));
+						text.formatPlayerText(str, player);
 					}
 				}
 			}
@@ -364,10 +368,12 @@ public class AdminCommand implements CommandExecutor{
 
 					sender.sendMessage(ChatColor.GRAY + modText.getAdminAdd("added").addVariables(job, play, sender.getName()));
 
-					if(Bukkit.getPlayer(play) != null){
+                    @SuppressWarnings("deprecation")
+                    final Player player = Bukkit.getPlayer(play);
+					if(player != null){
 						PrettyText text = new PrettyText();
 						String str = ChatColor.GRAY + modText.getAdminAdd("padded").addVariables(job, play, sender.getName());
-						text.formatPlayerText(str, Bukkit.getPlayer(play));
+						text.formatPlayerText(str, player);
 					}
 				}
 			}
@@ -408,10 +414,12 @@ public class AdminCommand implements CommandExecutor{
 
 				sender.sendMessage(ChatColor.GRAY + modText.getAdminRemove("removed").addVariables(job, play, sender.getName()));
 
-				if(Bukkit.getPlayer(play) != null){
+                @SuppressWarnings("deprecation")
+                final Player player = Bukkit.getPlayer(play);
+				if(player != null){
 					PrettyText text = new PrettyText();
 					String str = ChatColor.GRAY + modText.getAdminRemove("premoved").addVariables(job, play, sender.getName());
-					text.formatPlayerText(str, Bukkit.getPlayer(play));
+					text.formatPlayerText(str, player);
 				}
 			}
 		}
@@ -467,30 +475,25 @@ public class AdminCommand implements CommandExecutor{
 		return str;
 	}
 
-	private ArrayList<String> getPlayers(String args, CommandSender sender){
-		List<Player> aOnline              = new ArrayList<Player>();
-		ArrayList<String> players         = new ArrayList<String>();
+	private ArrayList<String> getPlayers(String args, CommandSender sender) {
+		ArrayList<String> players = new ArrayList<>();
 
-		 aOnline = (List<Player>) Bukkit.getOnlinePlayers();
-
-		if(PlayerCache.playerExists(args))
+		if (PlayerCache.playerExists(args)) {
 			players.add(args);
+        }
 
-		if(bVault){
+		if (bVault) {
 			Permission permission = Bukkit.getServer().getServicesManager().getRegistration(net.milkbowl.vault.permission.Permission.class).getProvider();
-			List<String> lGroups = new ArrayList<String>();
-			lGroups = Arrays.asList(permission.getGroups());
+			final List<String> lGroups = Arrays.asList(permission.getGroups());
 
 			if(lGroups.contains(args)){
-				Iterator<Player> it = aOnline.iterator();
+				Iterator<? extends Player> it = Bukkit.getOnlinePlayers().iterator();
 
 				while(it.hasNext()){
 					Player play = it.next();
 					String[] playerGroups = permission.getPlayerGroups(play);
-					List<String> lPlayerGroups = new ArrayList<String>();
-
 					if(playerGroups != null){
-						lPlayerGroups = Arrays.asList(playerGroups);
+						final List<String> lPlayerGroups = Arrays.asList(playerGroups);
 
 						if(lPlayerGroups.contains(args))
 							players.add(play.getName());

@@ -17,24 +17,24 @@ public class McJobsComp implements Runnable{
 	private static boolean bVault;
 	private static boolean bRegister;
 	private static boolean bXP;
-	
+
 	public McJobsComp(ArrayList<CompCache> aComp){
 		this.aComp = aComp;
 		this.aPayer = new ArrayList<PaymentCache>();
 	}
-	
+
 	@Override
 	public void run() {
 		Iterator<CompCache> it = aComp.iterator();
-		
+
 		while(it.hasNext()){
 			CompCache comp = it.next();
-			
+
 			if(comp.getAction().equalsIgnoreCase("break")){
 				if(PlayerJobs.getJobsList().get(comp.getJob()).getData().compJob().compBlock(comp.getMaterial(), comp.getPlayer(), comp.getAction(), aPayer)){
 					if(McJobs.getPlugin().getBlockLogging().getBuiltIn().containsKey(comp.getPlayer().getWorld()))
 						if(McJobs.getPlugin().getBlockLogging().getBuiltIn().get(comp.getPlayer().getWorld()))
-							McJobs.getPlugin().getBlockLogging().addPlayer(comp.getLocation(), comp.getPlayer(), true);	
+							McJobs.getPlugin().getBlockLogging().addPlayer(comp.getLocation(), comp.getPlayer(), true);
 				}
 			}
 			else if(comp.getAction().equalsIgnoreCase("place")){
@@ -42,7 +42,7 @@ public class McJobsComp implements Runnable{
 					if(McJobs.getPlugin().getBlockLogging().getBuiltIn().containsKey(comp.getPlayer().getWorld()))
 						if(McJobs.getPlugin().getBlockLogging().getBuiltIn().get(comp.getPlayer().getWorld()))
 							McJobs.getPlugin().getBlockLogging().addPlayer(comp.getLocation(), comp.getPlayer(), false);
-				}				
+				}
 			}
 			else if(comp.getAction().equalsIgnoreCase("defeat"))
 				PlayerJobs.getJobsList().get(comp.getJob()).getData().compJob().compEntity(comp.getEntity(), comp.getPlayer(), comp.getAction(), aPayer);
@@ -62,14 +62,14 @@ public class McJobsComp implements Runnable{
 
 			}
 		}
-		
+
 		Iterator<PaymentCache> its = aPayer.iterator();
-		
+
 		while(its.hasNext()){
 			PaymentCache payment = its.next();
 			String str = "";
 
-			
+
 			if(payment.getPayed()){
 				if(bVault)
 					str = PayMoney.payVault(payment.getPlayer(), payment.getPaymentTier(), payment.getBasePay(), payment.getJobName());
@@ -84,13 +84,13 @@ public class McJobsComp implements Runnable{
 				if(bRegister)
 					str = PayMoney.chargeRegister(payment.getPlayer(), payment.getPaymentTier(), payment.getBasePay(), payment.getJobName());
 				if(bXP)
-					str = PayXP.chargeXP(payment.getPlayer(), payment.getPaymentTier(), payment.getBasePay(), payment.getJobName());				
+					str = PayXP.chargeXP(payment.getPlayer(), payment.getPaymentTier(), payment.getBasePay(), payment.getJobName());
 			}
-			
+
 			double xpPayment = payment.getPaymentTier() * PlayerJobs.getJobsList().get(payment.getJobName()).getData().getEXP();
 			PlayerCache.addExp(payment.getPlayer().getName(), payment.getJobName().toLowerCase(), xpPayment);
 
-			if(str != ""){
+			if(!str.isEmpty()){
 				if(PlayerCache.getShowEveryTime(payment.getPlayer().getName(), payment.getJobName()))
 					payment.getPlayer().sendMessage(str);
 			}
@@ -111,7 +111,7 @@ public class McJobsComp implements Runnable{
 	public static void setRegister(boolean b){
 		bRegister = b;
 	}
-	
+
 	public static void setXP(boolean b){
 		bXP = b;
 	}
