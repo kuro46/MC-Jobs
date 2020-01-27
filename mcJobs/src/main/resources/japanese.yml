@@ -23,12 +23,12 @@ jobsnotify:
     overpay: "&e%p&a, you are exhausted and cannot earn more from &6MC Jobs&a for awhile."
 
 jobsdisplay:
-    employed: "--   &cEmployed"
-    unemployed: "-- &9Unemployed"
+    employed: "--   &c参加している"
+    unemployed: "-- &9参加していない"
     default: "--    &3Default"
-    basepay: Base Pay
-    charge: CHARGE
-    pay: PAY
+    basepay: 基本給
+    charge: 罰金
+    pay: 給料
     level: レベル
     rank: ランク
     exp: 経験値
@@ -74,7 +74,7 @@ jobshelp:
         line6: "&2どんなJobがあるかは &e/jobs list &2とうつことで確認できます."
         line7: ""
         line8: "&2さらにJobについて詳しく見るためには:"
-        line9: "&e/jobs [job_name] &2とうってください"
+        line9: "&e/jobs [job name] &2とうってください"
         line10: ""
         line11: "&e[job name] &2にはJobを入力してください, 例えば &6digger&2 のように."
         line12: "&e/jobs join &2そして&e leave &2については次のページを見てください"
@@ -90,7 +90,7 @@ jobshelp:
         line9: "&2最大数までJobに参加した場合、新しいJobに参加するには,"
         line10: "&2いま参加しているJobの中からどれか一つを抜ける必要があります."
         line11: ""
-        line12: "&2&e/jobs list&2について詳しく見るには3ページ目を見てください"
+        line12: "&2&e/jobs list&2については次のページを見てください"
     3:
         line1: "&2   listコマンドはとても簡単です"
         line2: "&2あなたがいまどのJobに参加できてどのJobに参加できないのかが"
@@ -103,44 +103,44 @@ jobshelp:
         line9: "&2サーバーに参加した時にすべてのプレイヤーが強制的に参加させられます"
         line10: "&2&cmcjobs.admin.leavedefault&2 という権限を持ったプレイヤーのみ &3デフォルトのJob&2を抜けることができます."
         line11: ""
-        line12: "&2続きを見るには4ページ目を表示してください"
+        line12: "&2続きを見るにはについては次のページを見てください"
     4:
-        line1: "&2Lastly it tells you how many jobs you have versus the max"
-        line2: "&2jobs the server allows, which is &c%j&2 on this server." 
+        line1: "&2最後に、同時に参加可能なJob数と現在参加しているJobの数を表示してくれます。"
+        line2: "&2このサーバーで同時に参加可能な職業は &c%j&2 です。" 
         line3: "" 
-        line4: "&2  The &e/jobs leave&2 command works the same as the &ejoin"
-        line5: "&2command.  You can only leave jobs that you have already"
-        line6: "&2joined.  This will allow you to pick up new jobs in case you"
-        line7: "&2change your mind on what you want to be."
+        line4: "&2  &e/jobs leave&2 コマンドは &ejoin"
+        line5: "&2 コマンドと同じように機能します。すでに参加しているJobからしか抜けることは"
+        line6: "&2できません。もし今のJobを変えたくなった時には"
+        line7: "&2このコマンドを使用しましょう。"
         line8: ""
-        line9: "&2Once you leave a job you cannot rejoin it for a server"
-        line10: "&2specified time frame.  The default is 1 hour."
+        line9: "&2一度Jobを抜けるとサーバーに指定された期間"
+        line10: "&2そのJobに参加できなくなります。デフォルトでは1時間です。"
         line11: ""
-        line12: "&2To learn about &e/jobs [job name] continue to next page"
+        line12: "&e/jobs [job name] については次のページを見てください"
     5:
         line1: "&2  &e/jobs [job name]&2 コマンドは指定したJobについて"
         line2: "&2必要な全ての情報を見ることができます"
         line3: ""
-        line4: "&2The first line starts with the &3jobs name&2 and is followed by"
-        line5: "&2whether you are &cemployed&2 by the job or whether you are"
-        line6: "&2not part of the job.  In which case it will say &9unemployed&2."
-        line7: "&2Next it tells you the &abase pay&2 of the job.  This figure is how"
-        line8: "&2much money or xp &6TIER1&2 will pay you upon doing the &eaction&2."
-        line9: "&2The last bit of information this line tells the player is whether"
-        line10: "&2the job &apays&2 or &ccharges&2 the player for completing &eactions&2."
+        line4: "&21行目は&3jobs name&2 で始まり、それに続き"
+        line5: "&2そのJobに参加している場合は&c参加している&2と表示され、。"
+        line6: "&2参加していない場合は&9参加していない&2と表示されます"
+        line7: "&2次にその職業の&a基本給&2が表示されます。基本給は&3アクション&2ごとに"
+        line8: "&2どれだけのお金とXPが&6TIER1&2で支払われるかを示します。"
+        line9: "&2最後に書いてある情報はその&eアクション&2を行うことにより"
+        line10: "&2プレイヤーが&a給料&2を得るか&c罰金&2を支払うかを示しています。"
         line11: ""
-        line12: "&2The next page will explain the subsequent lines of &e/jobs [job]"
+        line12: "&2&e/jobs [job] についてより詳しくは次のページを見てください"
     6:
-        line1: "&2As said a job can both &apay&2 and &ccharge&2 the player.  As an"
-        line2: "&2example, the &6miner&2 job &apays&2 the player for breaking &7iron ore&2."
-        line3: "&2However if you place &7iron ore&2 it will &ccharge&2 you money instead."
+        line1: "&2Jobは&a給料&2がもらえる場合と&c罰金&2される場合があります。"
+        line2: "&2例えばJobの&6miner&2は&7iron ore&2を破壊すると&a給料&2が与えられますが"
+        line3: "&2&7iron ore&2を設置すると&c罰金&2されます。"
         line4: ""
-        line5: "&2If you are currently &cemployed&2 with the job it will show you"
-        line6: "&2your current &6level&2 and &6rank&2 in the job."
-        line7: "&2The second line is the jobs &6description&2."
+        line5: "&2現在そのJobに&c参加&2している場合は"
+        line6: "&2現在の&6レベル&2と&6ランク&2が表示されます。"
+        line7: "&22行目には&6説明&2が書かれています。"
         line8: ""
-        line9: "&2After the dashes is what the jobs &eactions&2 are and what blocks"
-        line10: "&2or entities are used by the job."
+        line9: "&2点線の後には職業の&eアクション&2と、どのブロックやエンティティ"
+        line10: "&2がその職業で使われるかが評されます。"
         line11: ""
         line12: "&2&eアクションについては&2次のページを見てください."
     7:
@@ -207,31 +207,31 @@ adminlist:
 
 pitch:
     line0: "This server runs:"
-    line1: "&aTo see what jobs are available type: &e/jobs list"
-    line2: "&aTo join a job type: &e/jobs join [job_name]"
-    line3: "&aPlay, &2earn money&a, and have fun!"
+    line1: "&a参加可能なJobのリストを見るには次のコマンドを入力してください: &e/jobs list"
+    line2: "&aJobに参加するには次のコマンドを入力してください: &e/jobs join [Job名]"
+    line3: "&a遊んで&2儲けて&a、楽しもう！"
     
 onadminlogin:
     toolow: "&eYour pay scale is too low for an &6XP&e based economy.  Consider switching &2pay_scale&e to high in the config.yml file."
     outofdate: "&eConfig.yml is out of date.  &6MC Jobs&e may not work properly without reloading the config file."
 
 experience:
-    level: "&eYou are now level &6%g&e in &6%j&e."
-    reset: "&eYour level in &6%j&e has been reset to &c0&e."
-    rank:  "&eYou are now rank &6%g&e in &6%j&e."
-    added_lvl: "&7You have given &6%p &a%g&7 levels in &6%j&7."
-    padded_lvl: "&7You have been given &a%g&7 levels in &6%j&7 by a system admin."
-    added_xp: "&7You have given &6%p &a%g&7 experience in &6%j&7."
-    padded_xp: "&7You have been given &a%g&7 experience in &6%j&7 by a system admin."
-    nojob: "&6%p&c doesn't have the &6%j&c job."
+    level: "&e現在 &6%j&e のレベルは &6%g&e です。"
+    reset: "&6%j&e のレベルが &c0&e にリセットされました。"
+    rank:  "&e あなたの &6%j&e のランクは &6%g&e です。"
+    added_lvl: "&6%p&7 のJob &6%j&7 に &a%g&7 レベルを付与しました。"
+    padded_lvl: "&7運営によりJob &6%j&7 のレベルが &a%g&7 レベル付与されました。"
+    added_xp: "&6%p&7 のJob &6%j&7 に &a%g&7 経験値を付与しました。"
+    padded_xp: "&7運営によりJob &6%j&7 の経験値が &a%g&7 付与されました。"
+    nojob: "&6%p&c は &6%j&c に参加していません。"
 
 payment:
-    pay: "&aThe &6%j&a job has paid you &6%g&a %p."
-    payxp: "&aThe &6%j&a job has earned you &6%g&a experience."
-    charge: "&aThe &6%j&a job has cost you &c%g&a %p."
-    chargexp: "&aThe &6%j&a job has taken &c%g&a experience."
-    currency_single: dollar
-    currency_plural: dollars
+    pay: "&aJob &6%j&a により &6%g&a 支払われました %p。"
+    payxp: "&aJob &6%j&a により &6%g&a 経験値を入手しました。"
+    charge: "&aJob &6%j&a により &c%g&a お金が減りました %p。"
+    chargexp: "&aJob &6%j&a により &c%g&a 経験値が減りました。"
+    currency_single: 円
+    currency_plural: 円
     
 spaces:
     jobslist: 16
